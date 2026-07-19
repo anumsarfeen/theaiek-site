@@ -1,0 +1,258 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>AIEK — Marketing, Operations & Distribution, Dubai</title>
+<meta name="description" content="AIEK is a Dubai growth partner. One team for the whole picture: retail, operations and GCC distribution, plus brand, marketing, AI and customer experience.">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600&family=Space+Grotesk:wght@500;600;700&display=swap" rel="stylesheet">
+<style>
+  :root{
+    --bg:#121316; --panel:#191b1f; --panel2:#0c2628; --line:#262a2e;
+    --cyan:#00d8f0; --gold:#c3a46d; --text:#ece9e3; --muted:#8a9698; --white:#fff;
+    --maxw:1120px;
+  }
+  *{box-sizing:border-box}
+  html{scroll-behavior:smooth}
+  body{margin:0; background:var(--bg); color:var(--text); font-family:"Inter",system-ui,Arial,sans-serif; font-size:17px; line-height:1.6; -webkit-font-smoothing:antialiased}
+  a{color:inherit; text-decoration:none}
+  h1,h2,h3{font-family:"Space Grotesk","Inter",sans-serif; font-weight:600; margin:0; line-height:1.05; letter-spacing:-0.02em}
+  .wrap{max-width:var(--maxw); margin:0 auto; padding:0 28px}
+  .eyebrow{font-size:12px; letter-spacing:.22em; text-transform:uppercase; color:var(--cyan); font-weight:600; margin:0 0 18px}
+  .muted{color:var(--muted)} .cyan{color:var(--cyan)}
+
+  header{position:sticky; top:0; z-index:50; background:rgba(18,19,22,0); transition:background .3s,border-color .3s; border-bottom:1px solid transparent}
+  header.scrolled{background:rgba(16,17,20,.86); backdrop-filter:blur(10px); border-bottom:1px solid var(--line)}
+  .nav{display:flex; align-items:center; justify-content:space-between; height:92px}
+  .nav .brand{height:44px; width:auto; display:block}
+  .nav-links{display:flex; gap:32px; align-items:center}
+  .nav-links a{font-size:14.5px; color:var(--muted); transition:color .2s}
+  .nav-links a:hover{color:var(--text)}
+  .btn{display:inline-block; font-family:"Space Grotesk",sans-serif; font-weight:600; font-size:14.5px; padding:12px 22px; border-radius:2px; transition:transform .15s,background .2s,color .2s,border-color .2s}
+  .btn-primary{background:var(--cyan); color:#08252b} .btn-primary:hover{transform:translateY(-1px); background:#3ce4f7}
+  .btn-ghost{border:1px solid var(--line); color:var(--text)} .btn-ghost:hover{border-color:var(--cyan); color:var(--cyan)}
+  .nav .btn{padding:10px 18px}
+
+  .hero{padding:106px 0 92px; position:relative; overflow:hidden}
+  .hero .wrap{position:relative; z-index:2}
+  .hero h1{font-size:clamp(44px,7.2vw,90px); font-weight:700; max-width:15ch}
+  .hero .lead{font-size:clamp(18px,2.1vw,22px); color:var(--text); max-width:62ch; margin:30px 0 0; line-height:1.5}
+  .hero .cta-row{display:flex; gap:14px; flex-wrap:wrap; margin-top:40px}
+  .hero .loc{margin-top:30px; font-size:13.5px; letter-spacing:.04em; color:var(--muted)}
+  .hero .loc b{color:var(--text); font-weight:600}
+  .glow{position:absolute; right:-12%; top:-18%; width:620px; height:620px; z-index:1; background:radial-gradient(circle, rgba(0,216,240,.13), rgba(0,216,240,0) 62%); pointer-events:none}
+
+  .section{padding:88px 0; border-top:1px solid var(--line)}
+  .section h2{font-size:clamp(30px,4vw,46px); font-weight:600; max-width:22ch}
+  .section .intro{color:var(--muted); max-width:60ch; margin:20px 0 0; font-size:18px}
+
+  .group{margin-top:52px}
+  .group-label{font-family:"Space Grotesk",sans-serif; font-size:13px; letter-spacing:.14em; text-transform:uppercase; color:var(--gold); font-weight:600; margin:0 0 26px; padding-bottom:14px; border-bottom:1px solid var(--line)}
+  .capgrid{display:grid; grid-template-columns:repeat(4,1fr); gap:36px 30px}
+  .cell .mk{width:22px; height:2px; background:var(--cyan); margin-bottom:16px}
+  .cell h3{font-size:17.5px; font-weight:600; margin-bottom:9px}
+  .cell p{margin:0; font-size:14.5px; color:var(--muted); line-height:1.5}
+
+  .flow{display:grid; grid-template-columns:repeat(4,1fr); gap:28px; margin-top:54px}
+  .step{border-top:2px solid var(--cyan); padding-top:20px}
+  .step .n{font-family:"Space Grotesk",sans-serif; font-size:14px; letter-spacing:.18em; color:var(--cyan); font-weight:600}
+  .step h3{font-size:20px; font-weight:600; margin:12px 0 10px}
+  .step p{margin:0; color:var(--muted); font-size:15px}
+
+  .steps3{display:grid; grid-template-columns:repeat(3,1fr); gap:28px; margin-top:54px}
+
+  .models{display:grid; grid-template-columns:repeat(3,1fr); gap:24px; margin-top:52px}
+  .model{background:var(--panel); border:1px solid var(--line); padding:30px 28px 34px; transition:border-color .2s}
+  .model:hover{border-color:var(--cyan)}
+  .model h3{font-size:20px; font-weight:600; margin-bottom:12px}
+  .model p{margin:0; color:var(--muted); font-size:15px}
+  .model .tag{display:inline-block; font-family:"Space Grotesk",sans-serif; font-size:12px; letter-spacing:.12em; text-transform:uppercase; color:var(--cyan); margin-bottom:16px}
+
+  .why{display:grid; grid-template-columns:repeat(3,1fr); gap:40px; margin-top:52px}
+  .why .p h3{font-size:19px; font-weight:600; margin-bottom:10px}
+  .why .p p{margin:0; color:var(--muted); font-size:15.5px}
+  .why .p .b{color:var(--gold)}
+
+  #contact h2{font-size:clamp(34px,5vw,58px)}
+  .contact-grid{display:flex; flex-wrap:wrap; gap:44px 90px; margin-top:44px; align-items:flex-start}
+  .cmail{font-family:"Space Grotesk",sans-serif; font-size:clamp(22px,3vw,32px); font-weight:600; color:var(--cyan); border-bottom:1px solid transparent; transition:border-color .2s}
+  .cmail:hover{border-color:var(--cyan)}
+  .cblock .l{font-size:12px; letter-spacing:.18em; text-transform:uppercase; color:var(--muted); margin-bottom:8px}
+  .cblock .v{font-size:17px; color:var(--text)} .cblock .v a:hover{color:var(--cyan)}
+
+  footer{border-top:1px solid var(--line); padding:42px 0}
+  .foot{display:flex; align-items:center; justify-content:space-between; gap:24px; flex-wrap:wrap}
+  .foot .brand{height:40px; width:auto; display:block; opacity:.95}
+  .foot .cr{font-size:13px; color:var(--muted)}
+
+  .reveal{opacity:0; transform:translateY(16px); transition:opacity .7s ease, transform .7s ease}
+  .reveal.in{opacity:1; transform:none}
+  @media (prefers-reduced-motion:reduce){.reveal{opacity:1;transform:none;transition:none} html{scroll-behavior:auto}}
+  :focus-visible{outline:2px solid var(--cyan); outline-offset:3px}
+
+  @media(max-width:900px){
+    .capgrid{grid-template-columns:repeat(2,1fr)}
+    .flow{grid-template-columns:repeat(2,1fr)}
+    .steps3{grid-template-columns:1fr}
+    .models{grid-template-columns:1fr}
+    .why{grid-template-columns:1fr; gap:30px}
+    .nav-links a:not(.btn){display:none}
+  }
+  @media(max-width:560px){
+    .capgrid{grid-template-columns:1fr}
+    .flow{grid-template-columns:1fr}
+    .hero{padding:76px 0 64px}
+    .section{padding:60px 0}
+  }
+</style>
+</head>
+<body>
+
+<header id="hdr">
+  <div class="wrap nav">
+    <a href="#top" aria-label="AIEK home"><img class="brand" alt="AIEK" data-logo style="display:none"><svg class="brand" viewBox="0 0 258 80" xmlns="http://www.w3.org/2000/svg" role="img" aria-label="AIEK"><text x="0" y="58" font-family="'Space Grotesk',sans-serif" font-weight="700" font-size="54" letter-spacing="3"><tspan fill="#ece9e3">AI</tspan><tspan fill="#00d8f0">E</tspan><tspan fill="#ece9e3">K</tspan></text><rect x="156" y="18" width="3" height="44" fill="#c3a46d"/><text x="172" y="56" font-family="'Noto Naskh Arabic','Geeza Pro','Segoe UI',sans-serif" font-weight="700" font-size="44" fill="#ece9e3">آيك</text></svg></a>
+    <nav class="nav-links">
+      <a href="#work">What we do</a>
+      <a href="#approach">Approach</a>
+      <a href="#process">How we work</a>
+      <a href="#contact">Contact</a>
+      <a href="mailto:info@theaiek.com" class="btn btn-primary">Get in touch</a>
+    </nav>
+  </div>
+</header>
+
+<main id="top">
+  <section class="hero">
+    <div class="glow"></div>
+    <div class="wrap">
+      <p class="eyebrow reveal">Dubai · Retail, Distribution &amp; Marketing</p>
+      <h1 class="reveal">One partner. The whole picture.</h1>
+      <p class="lead reveal">AIEK runs it all under one roof, from retail and operations to GCC distribution, plus the brand, marketing, AI and customer experience to grow it. We connect relevance to <span class="cyan">revenue</span>, then build the operations and distribution to deliver it.</p>
+      <div class="cta-row reveal">
+        <a href="mailto:info@theaiek.com" class="btn btn-primary">Start a conversation</a>
+        <a href="#work" class="btn btn-ghost">See what we do</a>
+      </div>
+    </div>
+  </section>
+
+  <section class="section" id="work">
+    <div class="wrap">
+      <p class="eyebrow reveal">What we do</p>
+      <h2 class="reveal">One partner for the whole picture.</h2>
+      <p class="intro reveal">Most brands stitch together a dozen suppliers. AIEK brings retail, operations and distribution together with marketing and customer, under one team, one budget and one standard.</p>
+
+      <div class="group reveal">
+        <p class="group-label">Retail, Operations &amp; Distribution</p>
+        <div class="capgrid">
+          <div class="cell"><div class="mk"></div><h3>Retail &amp; Operations</h3><p>Retail and business operations set up and run, from store and service standards to process, suppliers and teams.</p></div>
+          <div class="cell"><div class="mk"></div><h3>Distributorship</h3><p>GCC distribution and sourcing, connecting brands and products to the region through trade and distributor partnerships.</p></div>
+        </div>
+      </div>
+
+      <div class="group reveal">
+        <p class="group-label">Marketing, Creative &amp; AI</p>
+        <div class="capgrid">
+          <div class="cell"><div class="mk"></div><h3>Brand &amp; Strategy</h3><p>Positioning, identity and the plan that channels everything else.</p></div>
+          <div class="cell"><div class="mk"></div><h3>Digital &amp; Social</h3><p>Always-on content, paid, SEO and CRM that compound over time.</p></div>
+          <div class="cell"><div class="mk"></div><h3>PR, Influence &amp; Media</h3><p>Press, creators and media buying that earn genuine attention.</p></div>
+          <div class="cell"><div class="mk"></div><h3>Events &amp; Activation</h3><p>Experiences that make the brand a destination, not a line item.</p></div>
+          <div class="cell"><div class="mk"></div><h3>Out-of-Home &amp; Print</h3><p>Metro, mall, transit and print, planned, bought and produced.</p></div>
+          <div class="cell"><div class="mk"></div><h3>Creative &amp; Production</h3><p>Studio, film and content built to perform, not just to look good.</p></div>
+          <div class="cell"><div class="mk"></div><h3>AI Solutions</h3><p>AI woven through creative and production for more output, faster.</p></div>
+        </div>
+      </div>
+
+      <div class="group reveal">
+        <p class="group-label">Customer &amp; Partnerships</p>
+        <div class="capgrid">
+          <div class="cell"><div class="mk"></div><h3>CX, Loyalty &amp; Clienteling</h3><p>Journeys, CRM and clienteling that turn buyers into a lasting base.</p></div>
+          <div class="cell"><div class="mk"></div><h3>Partnerships &amp; Trade</h3><p>Corporate, hospitality and design relationships that convert to revenue.</p></div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section class="section" id="approach">
+    <div class="wrap">
+      <p class="eyebrow reveal">How we think</p>
+      <h2 class="reveal">We connect relevance to revenue.</h2>
+      <p class="intro reveal">Most work stops at attention. We plan the whole line, from earning relevance to converting it, and price the work against results.</p>
+      <div class="steps3 reveal">
+        <div class="step"><div class="n">01</div><h3>Build relevance</h3><p>Culturally anchored, craft-led work that earns attention and press, not paid noise.</p></div>
+        <div class="step"><div class="n">02</div><h3>Convert to revenue</h3><p>Gifting, partnerships, accounts and distribution that turn attention into orders.</p></div>
+        <div class="step"><div class="n">03</div><h3>Resource and price it</h3><p>One team to run it, priced as a retainer, per project, or a share of the upside.</p></div>
+      </div>
+    </div>
+  </section>
+
+  <section class="section" id="process">
+    <div class="wrap">
+      <p class="eyebrow reveal">How we work</p>
+      <h2 class="reveal">Four steps, one accountable team.</h2>
+      <div class="flow reveal">
+        <div class="step"><div class="n">01</div><h3>Discover</h3><p>We learn the business, the market and the numbers before proposing anything.</p></div>
+        <div class="step"><div class="n">02</div><h3>Strategise</h3><p>One integrated plan across every channel and function, tied to your goals.</p></div>
+        <div class="step"><div class="n">03</div><h3>Produce &amp; launch</h3><p>One team builds and ships, from creative to operations to distribution.</p></div>
+        <div class="step"><div class="n">04</div><h3>Measure &amp; scale</h3><p>Clear reporting against goals, then we double down on what returns.</p></div>
+      </div>
+    </div>
+  </section>
+
+  <section class="section" id="work-with">
+    <div class="wrap">
+      <p class="eyebrow reveal">Ways to work together</p>
+      <h2 class="reveal">Engagements that fit the brief.</h2>
+      <div class="models reveal">
+        <div class="model"><span class="tag">Project</span><h3>Defined scope</h3><p>A fixed outcome and price for a specific brief, from a launch to a market-entry plan.</p></div>
+        <div class="model"><span class="tag">Retainer</span><h3>Always-on team</h3><p>An ongoing team across marketing, operations or distribution, planned month to month.</p></div>
+        <div class="model"><span class="tag">Partnership</span><h3>Aligned to results</h3><p>Retainer plus a share of the upside, so we grow when you grow.</p></div>
+      </div>
+    </div>
+  </section>
+
+  <section class="section" id="why">
+    <div class="wrap">
+      <p class="eyebrow reveal">Why AIEK</p>
+      <h2 class="reveal">Agency-grade output, without the agency overhead.</h2>
+      <div class="why reveal">
+        <div class="p"><h3><span class="b">Founder-led.</span> Not farmed out.</h3><p>You work directly with the person who owns the strategy and the result, not a rotating account team.</p></div>
+        <div class="p"><h3><span class="b">The whole picture.</span></h3><p>Marketing, customer, operations and distribution in one place, so nothing falls between suppliers.</p></div>
+        <div class="p"><h3><span class="b">Rooted in the Gulf.</span></h3><p>16 years across GCC retail, luxury and hospitality, with the local instinct global agencies lack.</p></div>
+      </div>
+    </div>
+  </section>
+
+  <section class="section" id="contact">
+    <div class="wrap">
+      <p class="eyebrow reveal">Get in touch</p>
+      <h2 class="reveal">Let's build something.</h2>
+      <p class="intro reveal">Tell me what you are working on and where you want it to go.</p>
+      <div class="contact-grid reveal">
+        <a href="mailto:info@theaiek.com" class="cmail">info@theaiek.com</a>
+      </div>
+      <div class="contact-grid reveal">
+        <div class="cblock"><div class="l">Location</div><div class="v">Dubai, UAE</div></div>
+      </div>
+    </div>
+  </section>
+</main>
+
+<footer>
+  <div class="wrap foot">
+    <img class="brand" alt="AIEK" data-logo style="display:none"><svg class="brand" viewBox="0 0 258 80" xmlns="http://www.w3.org/2000/svg" role="img" aria-label="AIEK"><text x="0" y="58" font-family="'Space Grotesk',sans-serif" font-weight="700" font-size="54" letter-spacing="3"><tspan fill="#ece9e3">AI</tspan><tspan fill="#00d8f0">E</tspan><tspan fill="#ece9e3">K</tspan></text><rect x="156" y="18" width="3" height="44" fill="#c3a46d"/><text x="172" y="56" font-family="'Noto Naskh Arabic','Geeza Pro','Segoe UI',sans-serif" font-weight="700" font-size="44" fill="#ece9e3">آيك</text></svg>
+    <span class="cr">© 2026 AIEK · theaiek.com</span>
+  </div>
+</footer>
+
+<script>
+  var hdr=document.getElementById('hdr');
+  addEventListener('scroll',function(){hdr.classList.toggle('scrolled',scrollY>12)},{passive:true});
+  var io=new IntersectionObserver(function(es){es.forEach(function(e){if(e.isIntersecting){e.target.classList.add('in');io.unobserve(e.target)}})},{threshold:.12});
+  document.querySelectorAll('.reveal').forEach(function(el){io.observe(el)});
+  var _L="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAFgAAAA5CAMAAACF4xz5AAAAP1BMVEUAAAD39/f19fUG2vff39+srKzq6elwcHAB/P4GyugHsNcJm6gHx+H//3ABZWnOplgAAAAAAAAAAAAAAAAAAADBqWj/AAAAEHRSTlMA7ArvYA+hBwKgHxFdAgVECUHv2gAAA0hJREFUeNq9mNuCoyAMhmPkIOB23v9tNwfAaJ3OQLubm9rafv6EkEMBfjbvyDwAXj4379HDoCGCW8QcX19u8hORLISIo2AISzX6Md7fWRYEP8plvQHRqebrnaWvZowb0YscBtGFPySTROKRF9T/445wIsf7dmXvmO0d3rooOiNvImuPVjHybqKjZYzqJSEkM6hM2St30sbxQA8b9kOF1Q1H8bKBkHq5PwH2zArtd/qU00lAWKbA59Wj8Qtb2bZJcITrfkno4duK7yKsS95gT/QyB46XMyER1z54rGuaAx8CN3Jn3rrPUQS/A64ufRxOtxE3C8YWayR1T2l/QI1bx77Y3gE3SFnJ2lE7tm8SrLEmO7WuuR9hJoEsY9bHNdZEWtlJcT0mrvtnDqyhFdhk1URmILYQnFZ8qg8HuB+aecWw2IJGXJSsEWtangXXvKbbWGvTwo5th2T25JkzJsVt0dig6PA94mbALa+hvgEXIJGbC5Nr8ufoHgcbwUomU3JpKQTyBLgGlUmYvFlNM990G7/Nw+BLrZD8K6hVsoRzIngdTvTPpYKjQMn1dOeaPkZd8ST4IKcMJe98AaM177x1JzaTqxF3EKyxdsulzNy4O3EHwd8L5h3kpE9pf6JKP8XaGa0ve8o5pTIGvok1S85UWMkhKUlYvPrqjSeo0Y7ffyNDBcvJw4me8DvbHnsqherrNtgYDzW8ET5p1MGQq3Wo+o/GT/sXD8TPLsROJ/614k1snOt08tM27de+E/vz3Oe1aZouAo9+L4KFm8xSykmU9xX8ZelSc3sW8BEcchSy9j6z0LnT/FMkl/dukDIefTkEjzdgkPHySC8ozaQ0U2Y0qtcb5J1t6z0tHufXgFFa0DMYxMM8f7t+4jv4uVn2nPPi4QpTyII3YGxgRvX8axXXQnFMj76lBqPYR3FlA+uIrTjyiA/LFfyAnI6UrmA8gXUk5hY08L8A3N+wHeBg/3F45YrQHdbAKrT2zeZCaEjZ12ErckZxuSjmRH3ZPO3rLhaqYn1U8/1TuKU+L/Higk553cf0eQjSobM7tVOnnXC+haH/bV71l6jAa3EpvS7qQbXz532usDmLXr/MfxbNAGmFqwzvnzUKUbKq+C/w0RXEp1T1tAAAAABJRU5ErkJggg==";
+  document.querySelectorAll('img[data-logo]').forEach(function(i){i.onload=function(){this.style.display='block';this.nextElementSibling.style.display='none';};i.src=_L;});
+</script>
+</body>
+</html>
