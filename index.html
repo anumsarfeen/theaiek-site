@@ -26,8 +26,8 @@
   header{position:sticky; top:0; z-index:50; background:rgba(18,19,22,0); transition:background .3s,border-color .3s; border-bottom:1px solid transparent}
   header.scrolled{background:rgba(16,17,20,.86); backdrop-filter:blur(10px); border-bottom:1px solid var(--line)}
   .nav{display:flex; align-items:center; justify-content:space-between; height:96px}
-  .nav .brand{height:36px; width:auto; display:block}
-  .brand-link{display:flex; flex-direction:column; align-items:center; gap:9px}
+  .nav .brand{height:31px; width:auto; display:block}
+  .brand-link{display:flex; flex-direction:column; align-items:center; gap:9px; transform:translateY(9px)}
   .brand-tagline{font-family:"Space Grotesk","Inter",sans-serif; font-size:10px; font-weight:600; letter-spacing:.13em; text-transform:uppercase; color:var(--muted); white-space:nowrap}
   .nav-links{display:flex; gap:32px; align-items:center}
   .nav-links a{font-size:14.5px; color:var(--muted); transition:color .2s}
@@ -143,6 +143,8 @@
     .flow{grid-template-columns:1fr}
     .hero{padding:76px 0 64px}
     .section{padding:60px 0}
+    .nav .brand{height:24px}
+    .brand-tagline{font-size:8px}
   }
 </style>
 </head>
